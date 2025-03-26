@@ -3,8 +3,7 @@ import toast from 'react-hot-toast';
 import { io } from 'socket.io-client';
 import { create } from 'zustand';
 
-// @ts-ignore
-const BASEURL = import.meta.env.MODE === 'development' ? `${import.meta.env.VITE_APP_API_URL}/api` : '/api';
+const BASEURL = import.meta.env.MODE === 'development' ? import.meta.env.VITE_APP_API_URL : '/';
 
 export const useAuth = create((set, get) => ({
   authUser: null,
